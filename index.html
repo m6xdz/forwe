@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Для моєї Каміли ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #f1f1f1;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 650px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            padding: 30px 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+        h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            color: #ff6b81;
+            text-shadow: 0 3px 10px rgba(255, 107, 129, 0.3);
+        }
+        .subtitle {
+            font-size: 1.1rem;
+            color: #dcdde1;
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+        .counter-box {
+            background: rgba(255, 107, 129, 0.15);
+            border: 2px dashed #ff6b81;
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 30px;
+        }
+        .counter-box h3 {
+            font-size: 1.1rem;
+            color: #ff6b81;
+            margin-bottom: 5px;
+        }
+        #days-count {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #fff;
+        }
+        .section {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .section h2 {
+            font-family: 'Pacifico', cursive;
+            font-size: 1.6rem;
+            color: #ff6b81;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        p {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+        .photo-placeholder {
+            width: 100%;
+            height: 250px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #a4b0be;
+            margin: 15px 0;
+            font-size: 0.95rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .photo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        /* Інтерактивна кнопка Рево */
+        .revo-btn {
+            background: linear-gradient(45deg, #ff4757, #ff6b81);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 71, 87, 0.4);
+            transition: 0.3s;
+            margin: 15px 0;
+            width: 100%;
+        }
+        .revo-btn:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(255, 71, 87, 0.6);
+        }
+        #revo-message {
+            margin-top: 10px;
+            font-weight: 600;
+            color: #ffa502;
+            min-height: 30px;
+        }
+        /* Конверти */
+        .envelope-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .envelope {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.2s;
+            text-align: center;
+            font-weight: 600;
+            color: #ff6b81;
+        }
+        .envelope:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+        .envelope-content {
+            display: none;
+            margin-top: 10px;
+            font-size: 0.95rem;
+            color: #dcdde1;
+            background: rgba(0,0,0,0.3);
+            padding: 10px;
+            border-radius: 8px;
+            text-align: left;
+        }
+        /* Кнопка причин */
+        .reason-box {
+            background: rgba(255, 107, 129, 0.1);
+            border-left: 4px solid #ff6b81;
+            padding: 15px;
+            border-radius: 0 10px 10px 0;
+            margin: 15px 0;
+            font-style: italic;
+        }
+        /* Пасхалка */
+        .easter-egg {
+            margin-top: 30px;
+            font-size: 0.85rem;
+            color: #718093;
+            cursor: pointer;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 15px;
+        }
+        #secret-text {
+            display: none;
+            margin-top: 10px;
+            color: #00d2d3;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Для моєї Каміли ❤️</h1>
+        <p class="subtitle">Спеціальний сайт від Дані, бо ти найкраща (навіть коли чіпляєшся)</p>
+
+        <!-- Індикатор днів -->
+        <div class="counter-box">
+            <h3>Ми разом вже офіційно отакої:</h3>
+            <div id="days-count">рахуємо час...</div>
+        </div>
+
+        <!-- Блок 1: Як усе починалося -->
+        <div class="section">
+            <h2>📜 Шкільна романтика</h2>
+            <p>Я не пам'ятаю точну дату, коли ми вперше побачилися в школі, але я чітко пам'ятаю одне: <b>я влюбився в тебе одразу ж, як тільки побачив</b>. Моментально, в хлам.</p>
+            <p>А наше «перше свидання» під школою в компанії, де ми бухали як чорти... Ну, скажемо так, романтика своєрідна, але забути це просто анріл 😄.</p>
+            
+            <!-- Місце для фото під школою / компанії -->
+            <div class="photo-placeholder">
+                <span>[ Сюди закинь вашу спільну фотку ]</span>
+                <!-- Щоб додати фото, замість тексту вище вставте: <img src="файл.jpg" alt="Фото"> -->
+            </div>
+        </div>
+
+        <!-- Блок 2: Кнопка Рево -->
+        <div class="section" style="text-align: center;">
+            <h2>⚡ Термінова кнопка</h2>
+            <p style="text-align: center;">Натисни, якщо вважаєш, що Даня зараз правий:</p>
+            <button class="revo-btn" onclick="revoClick()">Побігли пити Рево під школу?</button>
+            <div id="revo-message"></div>
+        </div>
+
+        <!-- Блок 3: Конверти-сюрпризи -->
+        <div class="section">
+            <h2>💌 Конверти з приколом</h2>
+            <p>Вибери конверт (тільки обережно, там правда):</p>
+            
+            <div class="envelope-grid">
+                <div class="envelope" onclick="toggleEnv(1)">envelope #1: Чому я тебе терплю? 🙄</div>
+                <div id="env-1" class="envelope-content">Та тому що без тебе скучно і ніхто так більше не виносить мені мозги з такою любов'ю ❤️</div>
+
+                <div class="envelope" onclick="toggleEnv(2)">envelope #2: Суто серйозно 🔞</div>
+                <div id="env-2" class="envelope-content">Ти — найкраще, що в мене є. Навіть коли ти зла, я все одно тебе обожнюю.</div>
+
+                <div class="envelope" onclick="toggleEnv(3)">envelope #3: Головний факт</div>
+                <div id="env-3" class="envelope-content">Ти моя маленька кішечка (навіть коли бунтуєш). Люблю тебе до біса безнадійно.</div>
+            </div>
+        </div>
+
+        <!-- Блок 4: За що я тебе люблю -->
+        <div class="section">
+            <h2>💎 За що я тебе люблю</h2>
+            <div class="reason-box">«За твою неймовірну посмішку і за те, як ти забавно зливаєшся з будь-яких тем.»</div>
+            <div class="reason-box">«За те, що з тобою можна і по-серйозному поговорити, і поугорати над якоюсь дичиною.»</div>
+            <div class="reason-box">«Просто за те, що ти є у моєму житті, Каміла.»</div>
+
+            <!-- Місце для другої фотки -->
+            <div class="photo-placeholder">
+                <span>[ Сюди ще одну вашу спільну милу фотку ]</span>
+            </div>
+        </div>
+
+        <!-- Фінал -->
+        <div class="section" style="text-align: center;">
+            <h2>🚀 Висновок</h2>
+            <p style="text-align: center;">Ми разом з <b>11 травня 2024 року</b>, і це найкращий час у моєму житті.</p>
+            <p style="text-align: center; font-weight: 600; color: #ff6b81;">Люблю тебе нереально, моя дурочка! ❤️</p>
+        </div>
+
+        <!-- Пасхалка про Нон-стоп -->
+        <div class="easter-egg" onclick="showSecret()">
+            🔍 [ Секретна кнопка для найуважніших ]
+            <div id="secret-text">Сподіваюся, після цього сайту ти зобов'язана купити мені Нон-стоп 😎</div>
+        </div>
+
+    </div>
+
+    <script>
+        // Рахуємо дні з 11 травня 2024 року
+        function updateCounter() {
+            const startDate = new Date('2024-05-11');
+            const today = new Date();
+            const diffTime = Math.abs(today - startDate);
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            document.getElementById('days-count').innerText = diffDays + ' днів разом ❤️';
+        }
+        updateCounter();
+
+        // Кнопка Рево
+        let revoClicks = 0;
+        function revoClick() {
+            revoClicks++;
+            const msg = document.getElementById('revo-message');
+            if (revoClicks === 1) {
+                msg.innerText = "🥤 Блін, аж в самого в горлі пересохло. Біжимо за Рево!";
+            } else if (revoClicks === 2) {
+                msg.innerText = "рєальна хватить тицяти, іди цілуй Даню 😘";
+            } else {
+                msg.innerText = "Та все, харош, ти і так найкраща! ❤️";
+            }
+        }
+
+        // Відкриття конвертів
+        function toggleEnv(num) {
+            const content = document.getElementById('env-' + num);
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+            } else {
+                content.style.display = 'block';
+            }
+        }
+
+        // Пасхалка
+        function showSecret() {
+            const secret = document.getElementById('secret-text');
+            secret.style.display = secret.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>
