@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Для моєї Каміли ❤️</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Pacifico&display=swap" rel="stylesheet">
+    <title>Kamila's Phone ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,301 +12,1796 @@
             box-sizing: border-box;
         }
         body {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            color: #f1f1f1;
-            font-family: 'Montserrat', sans-serif;
-            text-align: center;
-            padding: 20px;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            overflow-x: hidden;
-        }
-        .container {
-            max-width: 650px;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.07);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 25px;
-            padding: 30px 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-            margin-top: 20px;
-            margin-bottom: 40px;
-        }
-        h1 {
-            font-family: 'Pacifico', cursive;
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-            color: #ff6b81;
-            text-shadow: 0 3px 10px rgba(255, 107, 129, 0.3);
-        }
-        .subtitle {
-            font-size: 1.1rem;
-            color: #dcdde1;
-            margin-bottom: 25px;
-            font-weight: 300;
-        }
-        .counter-box {
-            background: rgba(255, 107, 129, 0.15);
-            border: 2px dashed #ff6b81;
-            border-radius: 15px;
-            padding: 15px;
-            margin-bottom: 30px;
-        }
-        .counter-box h3 {
-            font-size: 1.1rem;
-            color: #ff6b81;
-            margin-bottom: 5px;
-        }
-        #days-count {
-            font-size: 1.8rem;
-            font-weight: 800;
+            background: radial-gradient(circle at center, #1b143f 0%, #090514 100%);
             color: #fff;
-        }
-        .section {
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 20px;
-            text-align: left;
-        }
-        .section h2 {
-            font-family: 'Pacifico', cursive;
-            font-size: 1.6rem;
-            color: #ff6b81;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-        p {
-            font-size: 1.05rem;
-            line-height: 1.6;
-            margin-bottom: 15px;
-            font-weight: 300;
-        }
-        .photo-placeholder {
-            width: 100%;
-            height: 250px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 2px dashed rgba(255, 255, 255, 0.3);
-            border-radius: 12px;
+            font-family: 'Montserrat', sans-serif;
             display: flex;
-            align-items: center;
             justify-content: center;
-            color: #a4b0be;
-            margin: 15px 0;
-            font-size: 0.95rem;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
             position: relative;
+        }
+
+        .neon-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 107, 129, 0.15) 0%, transparent 60%);
+            z-index: -2;
+        }
+
+        .floating-elements {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: -1;
             overflow: hidden;
         }
-        .photo-placeholder img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .float-item {
             position: absolute;
-            top: 0;
-            left: 0;
+            bottom: -60px;
+            font-size: 22px;
+            animation: floatUp 7s linear infinite;
+            opacity: 0.65;
+            user-select: none;
+            white-space: nowrap;
         }
-        /* Інтерактивна кнопка Рево */
-        .revo-btn {
+        .float-text {
+            font-size: 13px;
+            font-weight: 600;
+            font-family: 'Pacifico', cursive;
+            color: rgba(255, 150, 170, 0.75);
+            padding: 4px 10px;
+            background: rgba(255, 107, 129, 0.12);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 107, 129, 0.25);
+            backdrop-filter: blur(4px);
+        }
+        @keyframes floatUp {
+            0% { transform: translateY(0) rotate(0deg) scale(0.85); opacity: 0; }
+            15% { opacity: 0.8; }
+            85% { opacity: 0.8; }
+            100% { transform: translateY(-108vh) rotate(15deg) scale(1.1); opacity: 0; }
+        }
+
+        #auth-screen {
+            max-width: 400px;
+            width: 90%;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 107, 129, 0.4);
+            border-radius: 25px;
+            padding: 30px 20px;
+            box-shadow: 0 0 40px rgba(255, 107, 129, 0.3);
+            text-align: center;
+            z-index: 20;
+        }
+        #auth-screen h2 {
+            font-family: 'Pacifico', cursive;
+            color: #ff6b81;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .input-group {
+            margin: 15px 0;
+            text-align: left;
+        }
+        .input-group label {
+            font-size: 0.85rem;
+            color: #a5b1c2;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 10px 14px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 107, 129, 0.4);
+            border-radius: 10px;
+            color: #fff;
+            font-size: 0.95rem;
+            outline: none;
+        }
+        .hint {
+            font-size: 0.8rem;
+            color: #f1c40f;
+            margin-top: 4px;
+            font-style: italic;
+        }
+        .login-btn {
             background: linear-gradient(45deg, #ff4757, #ff6b81);
             color: white;
             border: none;
-            padding: 15px 30px;
-            font-size: 1.1rem;
+            padding: 12px;
+            font-size: 1rem;
             font-weight: 600;
             border-radius: 50px;
             cursor: pointer;
-            box-shadow: 0 5px 15px rgba(255, 71, 87, 0.4);
-            transition: 0.3s;
-            margin: 15px 0;
             width: 100%;
-        }
-        .revo-btn:hover {
-            transform: scale(1.03);
-            box-shadow: 0 8px 20px rgba(255, 71, 87, 0.6);
-        }
-        #revo-message {
             margin-top: 10px;
+            box-shadow: 0 5px 15px rgba(255, 71, 87, 0.4);
+        }
+        #error-msg {
+            color: #ff4757;
+            margin-top: 10px;
+            font-size: 0.9rem;
             font-weight: 600;
-            color: #ffa502;
-            min-height: 30px;
         }
-        /* Конверти */
-        .envelope-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 10px;
-            margin-top: 15px;
+
+        #modal-screen {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(5, 3, 15, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 30;
+            justify-content: center;
+            align-items: center;
         }
-        .envelope {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 15px;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: 0.2s;
+        .modal-box {
+            background: rgba(255, 255, 255, 0.07);
+            border: 2px solid #ff6b81;
+            border-radius: 25px;
+            padding: 25px;
+            max-width: 360px;
+            width: 90%;
             text-align: center;
-            font-weight: 600;
+        }
+        .modal-box h2 {
+            font-family: 'Pacifico', cursive;
             color: #ff6b81;
+            font-size: 1.6rem;
+            margin-bottom: 12px;
         }
-        .envelope:hover {
-            background: rgba(255, 255, 255, 0.15);
-        }
-        .envelope-content {
-            display: none;
-            margin-top: 10px;
+        .modal-box p {
             font-size: 0.95rem;
-            color: #dcdde1;
-            background: rgba(0,0,0,0.3);
-            padding: 10px;
-            border-radius: 8px;
-            text-align: left;
+            margin-bottom: 20px;
+            color: #dfe6e9;
         }
-        /* Кнопка причин */
-        .reason-box {
-            background: rgba(255, 107, 129, 0.1);
-            border-left: 4px solid #ff6b81;
-            padding: 15px;
-            border-radius: 0 10px 10px 0;
-            margin: 15px 0;
-            font-style: italic;
+        .modal-btns {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            position: relative;
+            min-height: 50px;
         }
-        /* Пасхалка */
-        .easter-egg {
-            margin-top: 30px;
-            font-size: 0.85rem;
-            color: #718093;
+        .btn-yes {
+            background: #2ed573; color: white; border: none;
+            padding: 10px 20px; font-weight: 600; border-radius: 50px; cursor: pointer;
+        }
+        .btn-no {
+            background: #ff4757; color: white; border: none;
+            padding: 10px 20px; font-weight: 600; border-radius: 50px; cursor: pointer;
+            position: relative; transition: 0.2s;
+        }
+
+        #phone-container {
+            display: none; 
+            width: 380px;
+            height: 740px;
+            background: #000;
+            border: 12px solid #2d3436;
+            border-radius: 45px;
+            box-shadow: 0 0 50px rgba(255, 107, 129, 0.3), inset 0 0 15px rgba(0,0,0,0.8);
+            position: relative;
+            overflow: hidden;
+            flex-direction: column;
+            z-index: 10;
+        }
+
+        .phone-notch {
+            position: absolute;
+            top: 8px; left: 50%; transform: translateX(-50%);
+            width: 120px; height: 25px; background: #1e1e1e; border-radius: 15px;
+            z-index: 100; display: flex; align-items: center; justify-content: center;
+        }
+        .phone-notch::after {
+            content: ''; width: 10px; height: 10px; background: #0b051a; border-radius: 50%; position: absolute; right: 20px;
+        }
+
+        .status-bar {
+            height: 40px; padding: 10px 25px 0 25px; display: flex; justify-content: space-between; align-items: center;
+            font-size: 0.8rem; font-weight: 600; color: #fff; background: rgba(0,0,0,0.3); z-index: 90;
+        }
+
+        .phone-screen {
+            flex: 1; position: relative; overflow-y: auto; display: none; flex-direction: column;
+            background: linear-gradient(135deg, #18122b, #0f0b1f);
+        }
+        .phone-screen.active-screen { display: flex; }
+
+        .home-wallpaper {
+            flex: 1; 
+            padding: 20px; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between;
+            position: relative;
+            background-image: linear-gradient(rgba(10, 5, 20, 0.7), rgba(15, 11, 31, 0.85)), url('https://media.discordapp.net/attachments/1322742010989383720/1533899269067641132/IMG_9231.jpg?ex=6a722a84&is=6a70d904&hm=5abfee3626259e738bb1bdceb48e7e582e532a5b5fa65991c5e3423168c1f797&=&format=webp&width=576&height=1024');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .widget-clock { text-align: center; margin-top: 15px; text-shadow: 0 2px 10px rgba(0,0,0,0.8); }
+        .widget-clock h1 { font-size: 2.6rem; font-weight: 300; letter-spacing: 2px; }
+        .widget-clock p { font-size: 0.85rem; color: #ff6b81; font-weight: 600; }
+
+        .music-widget {
+            background: rgba(15, 10, 25, 0.65);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 107, 129, 0.35);
+            border-radius: 16px;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 10px 0;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+        }
+        .music-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            max-width: 190px;
+            overflow: hidden;
+        }
+        .music-disc {
+            width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(45deg, #ff4757, #ff6b81);
+            display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0;
+            animation: spinDisc 4s linear infinite;
+        }
+        .music-disc.paused {
+            animation-play-state: paused;
+        }
+        @keyframes spinDisc { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .music-text { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .music-text h4 { font-size: 0.82rem; font-weight: 600; color: #fff; overflow: hidden; text-overflow: ellipsis; }
+        .music-text p { font-size: 0.7rem; color: #ff6b81; }
+        
+        .music-controls {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+        .music-toggle-btn {
+            background: rgba(255, 255, 255, 0.15); border: none; color: #fff; width: 32px; height: 32px;
+            border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;
+            transition: 0.2s;
+        }
+        .music-toggle-btn:hover { background: #ff6b81; }
+
+        .app-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px 8px; padding: 5px; margin-bottom: 10px;
+        }
+        .app-icon { display: flex; flex-direction: column; align-items: center; cursor: pointer; transition: 0.2s; }
+        .app-icon:hover { transform: scale(1.08); }
+        .app-logo {
+            width: 54px; height: 54px; border-radius: 14px; display: flex; align-items: center; justify-content: center;
+            font-size: 24px; box-shadow: 0 4px 10px rgba(0,0,0,0.5); margin-bottom: 4px;
+            background: rgba(20, 15, 30, 0.7);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .app-name { font-size: 0.7rem; color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,0.9); text-align: center; font-weight: 500; }
+
+        .dock {
+            background: rgba(15, 10, 25, 0.65); backdrop-filter: blur(12px); border-radius: 25px;
+            padding: 8px; display: flex; justify-content: space-around; align-items: center; margin-top: auto;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+        }
+
+        .home-bar { height: 20px; display: flex; justify-content: center; align-items: center; background: rgba(0,0,0,0.4); flex-shrink: 0; }
+        .home-indicator { width: 120px; height: 4px; background: rgba(255,255,255,0.5); border-radius: 2px; cursor: pointer; }
+
+        .app-header {
+            display: flex; align-items: center; padding: 12px 15px; background: rgba(0,0,0,0.5); border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .back-btn {
+            background: none; border: none; color: #ff6b81; font-size: 1rem; cursor: pointer; font-weight: 600;
+            display: flex; align-items: center; gap: 5px;
+        }
+        .app-title { flex: 1; text-align: center; font-weight: 600; font-size: 0.95rem; margin-right: 30px; }
+
+        /* --- ІНСТАГРАМ --- */
+        .ig-header {
+            display: flex; justify-content: space-between; align-items: center; padding: 12px 15px; border-bottom: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.4);
+        }
+        .ig-profile { padding: 15px; display: flex; align-items: center; gap: 15px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .ig-avatar-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             cursor: pointer;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 15px;
+            flex-shrink: 0;
         }
-        #secret-text {
+        .ig-avatar {
+            width: 70px; height: 70px; border-radius: 50%; background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            padding: 3px; display: flex; align-items: center; justify-content: center;
+        }
+        .ig-avatar.viewed {
+            background: #555;
+        }
+        .ig-avatar-inner { width: 100%; height: 100%; border-radius: 50%; background: #111; display: flex; align-items: center; justify-content: center; font-size: 30px; overflow: hidden; }
+        .ig-avatar-inner img { width: 100%; height: 100%; object-fit: cover; }
+        .ig-story-label { font-size: 0.68rem; color: #ff6b81; font-weight: 700; margin-top: 3px; letter-spacing: 0.5px; }
+
+        .ig-stats { display: flex; gap: 15px; text-align: center; font-size: 0.8rem; }
+        .ig-stats span { display: block; font-weight: 700; font-size: 0.95rem; }
+        .ig-bio { padding: 0 15px 12px 15px; font-size: 0.82rem; text-align: left; line-height: 1.4; border-bottom: 1px solid rgba(255,255,255,0.08); }
+        
+        .profile-switcher { display: flex; background: rgba(0,0,0,0.4); padding: 8px; justify-content: center; gap: 10px; }
+        .switcher-btn { background: rgba(255,255,255,0.1); border: none; color: #fff; padding: 6px 14px; border-radius: 12px; font-size: 0.8rem; cursor: pointer; }
+        .switcher-btn.active { background: #ff6b81; font-weight: 600; }
+
+        .ig-nav-bar { display: flex; justify-content: space-around; background: rgba(0,0,0,0.5); border-bottom: 1px solid rgba(255,255,255,0.08); padding: 10px; font-size: 1rem; }
+        .ig-nav-tab { cursor: pointer; opacity: 0.6; transition: 0.2s; font-size: 0.85rem; font-weight: 600; }
+        .ig-nav-tab.active-tab { opacity: 1; border-bottom: 2px solid #ff6b81; color: #ff6b81; }
+
+        .ig-section { display: none; flex: 1; overflow-y: auto; flex-direction: column; background: #0f0b1f; }
+        .ig-section.active-ig { display: flex; }
+
+        .ig-feed { flex: 1; overflow-y: auto; padding-bottom: 20px; }
+        .ig-post-card { background: rgba(255,255,255,0.03); margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.08); text-align: left; }
+        .ig-post-author { display: flex; align-items: center; gap: 10px; padding: 10px 15px; font-size: 0.85rem; font-weight: 600; }
+        .ig-post-img { width: 100%; max-height: 320px; background: #111; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .ig-post-img img { width: 100%; height: auto; max-height: 320px; object-fit: contain; }
+        .ig-post-actions { padding: 10px 15px; font-size: 1.2rem; display: flex; gap: 12px; }
+        .ig-comments { padding: 0 15px 12px 15px; font-size: 0.82rem; color: #dfe6e9; }
+        .comment-item { margin-top: 4px; }
+        .comment-item b { color: #fff; margin-right: 5px; }
+
+        /* --- ІНСТАГРАМ ІСТОРІЇ (1В1 МОДАЛКА) --- */
+        #ig-stories-viewer {
             display: none;
-            margin-top: 10px;
-            color: #00d2d3;
-            font-weight: 600;
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: #000;
+            z-index: 550;
+            flex-direction: column;
+            justify-content: space-between;
+            animation: fadeInStory 0.25s ease;
         }
+        @keyframes fadeInStory {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .stories-progress-bar-container {
+            display: flex;
+            gap: 4px;
+            padding: 12px 10px 6px 10px;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+            position: absolute;
+            top: 0; left: 0; width: 100%;
+            z-index: 570;
+        }
+        .story-progress-segment {
+            flex: 1;
+            height: 2.5px;
+            background: rgba(255,255,255,0.35);
+            border-radius: 2px;
+            overflow: hidden;
+            position: relative;
+        }
+        .story-progress-fill {
+            width: 0%;
+            height: 100%;
+            background: #fff;
+            transition: width linear;
+        }
+        .story-header-info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 22px 12px 10px 12px;
+            z-index: 570;
+            position: absolute;
+            top: 15px; left: 0; width: 100%;
+        }
+        .story-user-meta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .story-user-ava {
+            width: 32px; height: 32px; border-radius: 50%; overflow: hidden; border: 1px solid #ff6b81;
+        }
+        .story-user-ava img { width: 100%; height: 100%; object-fit: cover; }
+        .story-username { font-size: 0.85rem; font-weight: 600; color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,0.8); }
+        .story-time-ago { font-size: 0.72rem; color: #ccc; margin-left: 6px; }
+        .story-close-btn {
+            background: none; border: none; color: #fff; font-size: 1.4rem; cursor: pointer; text-shadow: 0 1px 3px rgba(0,0,0,0.9); padding: 5px;
+        }
+        .story-video-container {
+            flex: 1;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #000;
+            overflow: hidden;
+        }
+        .story-video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .story-tap-left, .story-tap-right {
+            position: absolute;
+            top: 0; width: 50%; height: 100%;
+            z-index: 565;
+            cursor: pointer;
+        }
+        .story-tap-left { left: 0; }
+        .story-tap-right { right: 0; }
+
+        .story-footer-comments {
+            position: absolute;
+            bottom: 0; left: 0; width: 100%;
+            padding: 15px 12px 25px 12px;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            z-index: 570;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .story-comment-input-mock {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 10px 14px;
+            font-size: 0.82rem;
+            color: #fff;
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .story-comment-input-mock span {
+            color: #ff6b81;
+            font-weight: 600;
+            font-size: 0.78rem;
+        }
+        .story-like-btn {
+            background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #ff4757; padding: 0 5px;
+        }
+
+        .ig-direct-layout {
+            flex: 1; display: flex; flex-direction: column;
+            background: linear-gradient(135deg, #1f1025, #2b0c1e);
+            position: relative;
+        }
+        .direct-chat-list { flex: 1; overflow-y: auto; padding: 15px; display: flex; flex-direction: column; gap: 12px; }
+        
+        .chat-bubble {
+            max-width: 78%; padding: 10px 14px; border-radius: 18px; font-size: 0.88rem; line-height: 1.4; position: relative; display: flex; align-items: flex-end; gap: 8px;
+        }
+        .chat-bubble.receiver {
+            background: rgba(255, 255, 255, 0.12); align-self: flex-start; border-bottom-left-radius: 4px; color: #fff;
+        }
+        .chat-bubble.sender {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743); align-self: flex-end; border-bottom-right-radius: 4px; color: #fff;
+        }
+        .bubble-avatar { width: 24px; height: 24px; border-radius: 50%; overflow: hidden; flex-shrink: 0; background: #333; display: flex; align-items: center; justify-content: center; }
+        .bubble-avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+        #iphone-flashlight {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(255, 255, 255, 0); z-index: 500; pointer-events: none;
+            transition: background 0.2s ease-in-out;
+        }
+        #iphone-flashlight.flash-active {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* --- 📝 ДОДАТОК НОТАТКИ --- */
+        .ios-notes-app {
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            position: relative;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+        .ios-notes-nav {
+            padding: 15px 20px 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 0.5px solid rgba(255,255,255,0.15);
+        }
+        .ios-notes-back {
+            color: #ff9f0a;
+            background: none;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            font-weight: 400;
+            gap: 4px;
+        }
+        .ios-notes-title-main {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+            padding: 10px 20px 5px 20px;
+        }
+        .ios-notes-search-box {
+            padding: 0 20px 10px 20px;
+        }
+        .ios-notes-search-input {
+            width: 100%;
+            background: rgba(255,255,255,0.1);
+            border: none;
+            padding: 8px 12px;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 0.9rem;
+            outline: none;
+        }
+        .ios-notes-scroll-area {
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px 20px;
+        }
+        .ios-note-row {
+            background: #1c1c1e;
+            border-radius: 12px;
+            padding: 14px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        .ios-note-row:active { transform: scale(0.96); background: #2c2c2e; }
+        .ios-note-row h3 {
+            color: #ffcc00;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .ios-note-row .note-date {
+            font-size: 0.75rem;
+            color: #8e8e93;
+            margin-bottom: 6px;
+        }
+        .ios-note-row p {
+            font-size: 0.85rem;
+            color: #aeaeb2;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        #ios-single-note-view {
+            display: none;
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: #1c1c1e;
+            z-index: 120;
+            flex-direction: column;
+            transform: translateX(100%);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        #ios-single-note-view.note-open {
+            transform: translateX(0);
+        }
+        .single-note-header {
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 0.5px solid rgba(255,255,255,0.1);
+            background: rgba(28,28,30,0.9);
+            backdrop-filter: blur(10px);
+        }
+        .single-note-content {
+            padding: 20px;
+            flex: 1;
+            overflow-y: auto;
+            color: #fff;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            outline: none;
+            white-space: pre-wrap;
+        }
+
+        /* --- 🖼️ ДОДАТОК ГАЛЕРЕЯ (АЙФОН 1В1: СІТКА + ПЛАВНИЙ ПЕРЕГЛЯД ТА ТЕПЛІ СЛОВА) --- */
+        .ios-gallery-app {
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            position: relative;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+        }
+        .ios-gallery-header {
+            padding: 15px 20px 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 0.5px solid rgba(255,255,255,0.15);
+        }
+        .ios-gallery-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+            padding: 10px 20px 5px 20px;
+        }
+        .gallery-grid {
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px 15px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 6px;
+        }
+        .gallery-thumb {
+            aspect-ratio: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+            background: #1c1c1e;
+            transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+        }
+        .gallery-thumb:active { transform: scale(0.93); }
+        .gallery-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .gallery-thumb:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Повноекранний айфонівський перегляд фото в галереї з плавними анимаціями */
+        #gallery-viewer {
+            display: none;
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(10, 10, 12, 0.97);
+            backdrop-filter: blur(25px);
+            z-index: 150;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 25px 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        #gallery-viewer.viewer-active {
+            display: flex;
+            opacity: 1;
+        }
+        .viewer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .viewer-close {
+            background: rgba(255,255,255,0.2);
+            border: none; color: #fff; width: 32px; height: 32px;
+            border-radius: 50%; font-size: 0.9rem; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            transition: background 0.2s;
+        }
+        .viewer-close:hover { background: rgba(255,255,255,0.35); }
+
+        .viewer-img-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+        .viewer-img-container img {
+            max-width: 100%;
+            max-height: 360px;
+            border-radius: 14px;
+            object-fit: contain;
+            box-shadow: 0 10px 35px rgba(255, 107, 129, 0.35);
+            animation: zoomInPhoto 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @keyframes zoomInPhoto {
+            from { transform: scale(0.75); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .viewer-caption-box {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 107, 129, 0.35);
+            border-radius: 18px;
+            padding: 16px;
+            text-align: center;
+            backdrop-filter: blur(12px);
+            margin-bottom: 10px;
+            animation: slideUpCaption 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @keyframes slideUpCaption {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .viewer-caption-box h4 {
+            color: #ff6b81;
+            font-size: 1rem;
+            margin-bottom: 6px;
+            font-family: 'Pacifico', cursive;
+        }
+        .viewer-caption-box p {
+            font-size: 0.88rem;
+            color: #dfe6e9;
+            line-height: 1.45;
+        }
+
+        #phone-notification-banner {
+            position: absolute; top: 45px; left: 12px; right: 12px;
+            background: rgba(30, 30, 35, 0.92); backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 22px; padding: 14px;
+            z-index: 600; box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            transform: translateY(-150%); transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+            opacity: 0; color: #fff; text-align: left; cursor: pointer;
+        }
+        #phone-notification-banner.show-notif { transform: translateY(0); opacity: 1; }
+        .notif-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+        .notif-app-info { display: flex; align-items: center; gap: 6px; font-size: 0.75rem; color: #aaa; font-weight: 600; text-transform: uppercase; }
+        .notif-app-icon { width: 16px; height: 16px; border-radius: 4px; background: linear-gradient(45deg, #f09433, #dc2743); display: flex; align-items: center; justify-content: center; font-size: 10px; }
+        .notif-time { font-size: 0.7rem; color: #888; }
+        .notif-title { font-weight: 700; font-size: 0.85rem; margin-bottom: 2px; }
+        .notif-body { font-size: 0.82rem; color: #ddd; margin-bottom: 10px; }
+        .notif-reply-box { display: none; background: rgba(255, 255, 255, 0.1); border-radius: 14px; padding: 8px 12px; margin-top: 8px; }
+        .reply-option-btn { background: linear-gradient(45deg, #ff4757, #ff6b81); color: white; border: none; padding: 8px 12px; border-radius: 10px; font-size: 0.78rem; font-weight: 600; cursor: pointer; width: 100%; text-align: center; }
+        .notif-status-sent { font-size: 0.75rem; color: #2ed573; font-weight: 600; text-align: center; margin-top: 6px; display: none; }
+
+        #custom-photo-modal {
+            display: none;
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.92);
+            z-index: 700;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+            animation: fadeInModal 0.25s ease;
+        }
+        @keyframes fadeInModal {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .custom-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 25px;
+        }
+        .custom-modal-img-wrap {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+        .custom-modal-img-wrap img {
+            max-width: 100%;
+            max-height: 450px;
+            border-radius: 16px;
+            object-fit: contain;
+            box-shadow: 0 5px 25px rgba(255, 107, 129, 0.4);
+        }
+        .custom-modal-close-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: #fff;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .timer-screen-box { padding: 30px 20px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; background: #0f0b1f; flex: 1; }
+        .heart-pulse { font-size: 60px; animation: pulse 1.5s infinite; margin-bottom: 15px; }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15); } }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Для моєї Каміли ❤️</h1>
-        <p class="subtitle">Спеціальний сайт від Дані, бо ти найкраща (навіть коли чіпляєшся)</p>
+    <div class="floating-elements" id="floating-elements"></div>
+    <audio id="bg-music" preload="auto"></audio>
+    <div class="neon-bg"></div>
 
-        <!-- Індикатор днів -->
-        <div class="counter-box">
-            <h3>Ми разом вже офіційно отакої:</h3>
-            <div id="days-count">рахуємо час...</div>
+    <!-- ЕКРАН АВТОРИЗАЦІЇ -->
+    <div id="auth-screen">
+        <h2>🔒 Phone Lock</h2>
+        <p style="font-size: 0.9rem; color: #b2bec3; margin-bottom: 15px;">Введи дані смартфона Каміли:</p>
+        
+        <div class="input-group">
+            <label>Власник (Логін):</label>
+            <input type="text" id="login-input" placeholder="Ім'я...">
+            <div class="hint">💡 Підказка: Твоє ім'я англійською (Kamila)</div>
         </div>
 
-        <!-- Блок 1: Як усе починалося -->
-        <div class="section">
-            <h2>📜 Шкільна романтика</h2>
-            <p>Я не пам'ятаю точну дату, коли ми вперше побачилися в школі, але я чітко пам'ятаю одне: <b>я влюбився в тебе одразу ж, як тільки побачив</b>. Моментально, в хлам.</p>
-            <p>А наше «перше свидання» під школою в компанії, де ми бухали як чорти... Ну, скажемо так, романтика своєрідна, але забути це просто анріл 😄.</p>
+        <div class="input-group">
+            <label>Пароль / Пін-код:</label>
+            <input type="password" id="pass-input" placeholder="Дата...">
+            <div class="hint">💡 Підказка: День, коли мы стали парою (формат ДДММ)</div>
+        </div>
+
+        <button class="login-btn" onclick="checkAuth()">Розблокувати 🔓</button>
+        <div id="error-msg"></div>
+    </div>
+
+    <!-- МОДАЛЬНЕ ВІКНО ПЕРЕВІРКИ -->
+    <div id="modal-screen">
+        <div class="modal-box">
+            <h2 id="modal-title">Ти точно хочеш це бачити? 👀</h2>
+            <p id="modal-text">Тут повний телефон компромату та моєї любові до тебе!</p>
+            <div class="modal-btns">
+                <button class="btn-yes" onclick="acceptModal()">Так! ❤️</button>
+                <button class="btn-no" id="btn-no" onmouseover="moveNoBtn()" onclick="clickNoBtn()">Ні 🙄</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 📱 ІМІТАЦІЯ ТЕЛЕФОНУ -->
+    <div id="phone-container">
+        <div id="iphone-flashlight"></div>
+        <div class="phone-notch"></div>
+        
+        <div class="status-bar">
+            <span id="current-time">09:41</span>
+            <span>5G 🔋 100%</span>
+        </div>
+
+        <div id="phone-notification-banner" onclick="handleNotificationClick(event)">
+            <div class="notif-header">
+                <div class="notif-app-info">
+                    <div class="notif-app-icon">📸</div>
+                    <span>Instagram • зараз</span>
+                </div>
+                <div class="notif-time">щойно</div>
+            </div>
+            <div class="notif-title" id="notif-title-text">h.h.h.h.h.h.hs ❤️</div>
+            <div class="notif-body" id="notif-body-text">Кицюнь, я тебе дуже сильно люблю ❤️✨</div>
             
-            <!-- Місце для фото під школою / компанії -->
-            <div class="photo-placeholder">
-                <span>[ Сюди закинь вашу спільну фотку ]</span>
-                <!-- Щоб додати фото, замість тексту вище вставте: <img src="файл.jpg" alt="Фото"> -->
+            <div class="notif-reply-box" id="notif-reply-container">
+                <button class="reply-option-btn" onclick="sendQuickReply(event)">💬 Я тебе тоже ❤️</button>
+            </div>
+            <div class="notif-status-sent" id="notif-status-sent">✓ Відповідь надіслано</div>
+        </div>
+
+        <div id="custom-photo-modal">
+            <div class="custom-modal-header">
+                <span style="font-size: 0.85rem; color: #ff6b81; font-weight: 600;">📍 Секретний знімок</span>
+                <button class="custom-modal-close-btn" onclick="closeCustomPhotoModal()">✕</button>
+            </div>
+            <div class="custom-modal-img-wrap">
+                <img src="https://cdn.discordapp.com/attachments/1114329998447345724/1533975613306830979/IMG_7776.png?ex=6a72719e&is=6a71201e&hm=59c2da7afe020f840ccd1860a1035cc21aa087927f33c94b00cb73c7b708b8a5&" alt="Secret Photo">
+            </div>
+            <div style="text-align: center; padding-bottom: 20px;">
+                <p style="font-size: 0.9rem; color: #ff9f0a; font-family: 'Pacifico', cursive; margin-bottom: 6px;">Я тебе трошки сфоткав ❤️</p>
+                <p style="font-size: 0.78rem; color: #aaa;">Сама найкраща і найулюбленіша дівчинка на світі!</p>
             </div>
         </div>
 
-        <!-- Блок 2: Кнопка Рево -->
-        <div class="section" style="text-align: center;">
-            <h2>⚡ Термінова кнопка</h2>
-            <p style="text-align: center;">Натисни, якщо вважаєш, що Даня зараз правий:</p>
-            <button class="revo-btn" onclick="revoClick()">Побігли пити Рево під школу?</button>
-            <div id="revo-message"></div>
-        </div>
+        <!-- РОБОЧИЙ СТІЛ -->
+        <div id="screen-home" class="phone-screen active-screen">
+            <div class="home-wallpaper">
+                <div class="widget-clock">
+                    <h1 id="clock-big">09:41</h1>
+                    <p id="date-big">Понеділок, 3 серпня</p>
+                </div>
 
-        <!-- Блок 3: Конверти-сюрпризи -->
-        <div class="section">
-            <h2>💌 Конверти з приколом</h2>
-            <p>Вибери конверт (тільки обережно, там правда):</p>
-            
-            <div class="envelope-grid">
-                <div class="envelope" onclick="toggleEnv(1)">envelope #1: Чому я тебе терплю? 🙄</div>
-                <div id="env-1" class="envelope-content">Та тому що без тебе скучно і ніхто так більше не виносить мені мозги з такою любов'ю ❤️</div>
+                <div class="music-widget">
+                    <div class="music-info">
+                        <div class="music-disc" id="music-disc">🎵</div>
+                        <div class="music-text">
+                            <h4 id="track-title">Трек 1</h4>
+                            <p id="track-status">:) ❤️</p>
+                        </div>
+                    </div>
+                    <div class="music-controls">
+                        <button class="music-toggle-btn" id="music-btn" onclick="toggleMusic()">⏸</button>
+                        <button class="music-toggle-btn" onclick="nextTrack()" title="Наступний трек">⏭</button>
+                    </div>
+                </div>
 
-                <div class="envelope" onclick="toggleEnv(2)">envelope #2: Суто серйозно 🔞</div>
-                <div id="env-2" class="envelope-content">Ти — найкраще, що в мене є. Навіть коли ти зла, я все одно тебе обожнюю.</div>
+                <div class="app-grid">
+                    <div class="app-icon" onclick="openApp('instagram')">
+                        <div class="app-logo" style="background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);">📸</div>
+                        <span class="app-name">Instagram</span>
+                    </div>
+                    <div class="app-icon" onclick="openApp('gallery')">
+                        <div class="app-logo" style="background: linear-gradient(135deg, #3498db, #2ecc71);">🖼️</div>
+                        <span class="app-name">Галерея</span>
+                    </div>
+                    <div class="app-icon" onclick="openApp('notes')">
+                        <div class="app-logo" style="background: #1c1c1e; border: 1px solid #ffcc00;"><span style="color:#ffcc00; font-size:24px;">📝</span></div>
+                        <span class="app-name">Замітки</span>
+                    </div>
+                    <div class="app-icon" onclick="openApp('timer')">
+                        <div class="app-logo" style="background: #ff4757;">❤️</div>
+                        <span class="app-name">Ми разом</span>
+                    </div>
+                </div>
 
-                <div class="envelope" onclick="toggleEnv(3)">envelope #3: Головний факт</div>
-                <div id="env-3" class="envelope-content">Ти моя маленька кішечка (навіть коли бунтуєш). Люблю тебе до біса безнадійно.</div>
+                <div class="dock">
+                    <div class="app-icon" onclick="openApp('instagram')">
+                        <div class="app-logo" style="width: 44px; height: 44px; font-size: 20px; background: linear-gradient(45deg, #f09433, #dc2743); margin:0;">📸</div>
+                    </div>
+                    <div class="app-icon" onclick="openApp('gallery')">
+                        <div class="app-logo" style="width: 44px; height: 44px; font-size: 20px; background: linear-gradient(135deg, #3498db, #2ecc71); margin:0;">🖼️</div>
+                    </div>
+                    <div class="app-icon" onclick="openApp('notes')">
+                        <div class="app-logo" style="width: 44px; height: 44px; font-size: 20px; background: #1c1c1e; border: 1px solid #ffcc00; margin:0;"><span style="color:#ffcc00; font-size:18px;">📝</span></div>
+                    </div>
+                    <div class="app-icon" onclick="openApp('timer')">
+                        <div class="app-logo" style="width: 44px; height: 44px; font-size: 20px; background: #ff4757; margin:0;">❤️</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="home-bar" onclick="goHome()">
+                <div class="home-indicator"></div>
             </div>
         </div>
 
-        <!-- Блок 4: За що я тебе люблю -->
-        <div class="section">
-            <h2>💎 За що я тебе люблю</h2>
-            <div class="reason-box">«За твою неймовірну посмішку і за те, як ти забавно зливаєшся з будь-яких тем.»</div>
-            <div class="reason-box">«За те, що з тобою можна і по-серйозному поговорити, і поугорати над якоюсь дичиною.»</div>
-            <div class="reason-box">«Просто за те, що ти є у моєму житті, Каміла.»</div>
+        <!-- ІНСТАГРАМ -->
+        <div id="screen-instagram" class="phone-screen">
+            <div class="ig-header">
+                <button class="back-btn" onclick="goHome()">← Назад</button>
+                <span id="ig-nav-title" style="font-weight: 700; font-size: 0.95rem;">qeeinsx1 👑</span>
+                <span>⚙️</span>
+            </div>
 
-            <!-- Місце для другої фотки -->
-            <div class="photo-placeholder">
-                <span>[ Сюди ще одну вашу спільну милу фотку ]</span>
+            <div class="ig-nav-bar">
+                <div class="ig-nav-tab active-tab" id="tab-feed-btn" onclick="switchIgTab('feed')">🏠 Профіль</div>
+                <div class="ig-nav-tab" id="tab-memes-btn" onclick="switchIgTab('memes')">🐒 Лента мемов</div>
+                <div class="ig-nav-tab" id="tab-direct-btn" onclick="switchIgTab('direct')">💬 Direct</div>
+            </div>
+
+            <div id="ig-section-feed" class="ig-section active-ig">
+                <div class="profile-switcher">
+                    <button class="switcher-btn active" id="btn-profile-her" onclick="switchProfile('her')">Мій профіль (Каміла)</button>
+                    <button class="switcher-btn" id="btn-profile-him" onclick="switchProfile('him')">Його профіль (Даня)</button>
+                </div>
+
+                <div id="ig-profile-section">
+                    <div class="ig-profile">
+                        <div class="ig-avatar-container" id="profile-avatar-wrapper" onclick="openStoriesViewer()">
+                            <div class="ig-avatar" id="profile-avatar-ring">
+                                <div class="ig-avatar-inner" id="profile-avatar-box">
+                                    <img src="https://cdn.discordapp.com/attachments/1114329998447345724/1533901068809928884/4e346ffcf7c2c087926f1fbd7dac207c.jpg?ex=6a722c31&is=6a70dab1&hm=7069600dd20dac1ce8940334b37adf8dbaa3ede691d18ead6d043d2bcc74629c&" alt="Avatar">
+                                </div>
+                            </div>
+                            <span class="ig-story-label" id="profile-story-label">ІСТОРІЯ</span>
+                        </div>
+                        <div class="ig-stats">
+                            <div><span id="stat-posts">3</span>публікації</div>
+                            <div><span id="stat-followers">11.05.24K</span>підписники</div>
+                            <div><span id="stat-following">1</span>love</div>
+                        </div>
+                    </div>
+                    <div class="ig-bio" id="profile-bio-box">
+                        <b>Каміла ✨</b> (@qeeinsx1)<br>улюблена дівчинка Дані (крутишка) ❤️<br>📍 Semenivochka
+                    </div>
+                </div>
+
+                <div class="ig-feed" id="ig-feed-content"></div>
+            </div>
+
+            <div id="ig-section-memes" class="ig-section">
+                <div class="ig-feed" id="meme-container-list" style="padding-top: 10px;"></div>
+            </div>
+
+            <div id="ig-section-direct" class="ig-section">
+                <div class="ig-direct-layout">
+                    <div style="padding: 10px 15px; background: rgba(0,0,0,0.3); border-bottom: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; gap: 10px;">
+                        <div class="bubble-avatar" style="width: 32px; height: 32px;"><img src="https://cdn.discordapp.com/attachments/1114329998447345724/1533901068809928884/4e346ffcf7c2c087926f1fbd7dac207c.jpg?ex=6a722c31&is=6a70dab1&hm=7069600dd20dac1ce8940334b37adf8dbaa3ede691d18ead6d043d2bcc74629c&" alt="Danja"></div>
+                        <div style="text-align: left;">
+                            <div style="font-size: 0.85rem; font-weight: 600;">Даня </div>
+                            <div style="font-size: 0.65rem; color: #2ed573;">в мережі</div>
+                        </div>
+                    </div>
+
+                    <div class="direct-chat-list" id="direct-chat-messages">
+                        <div class="chat-bubble receiver">
+                            <div class="bubble-avatar"><img src="https://cdn.discordapp.com/attachments/1114329998447345724/1533901068809928884/4e346ffcf7c2c087926f1fbd7dac207c.jpg?ex=6a722c31&is=6a70dab1&hm=7069600dd20dac1ce8940334b37adf8dbaa3ede691d18ead6d043d2bcc74629c&" alt="Kamila"></div>
+                            <div>Ти мій тюбік маленький 😼</div>
+                        </div>
+                        <div class="chat-bubble sender">
+                            <div>А ти мііій ❤️</div>
+                        </div>
+                        <div class="chat-bubble receiver">
+                            <div class="bubble-avatar"><img src="https://cdn.discordapp.com/attachments/1114329998447345724/1533901068809928884/4e346ffcf7c2c087926f1fbd7dac207c.jpg?ex=6a722c31&is=6a70dab1&hm=7069600dd20dac1ce8940334b37adf8dbaa3ede691d18ead6d043d2bcc74629c&" alt="Kamila"></div>
+                            <div>То ми два тюбіка?</div>
+                        </div>
+                        <div class="chat-bubble sender">
+                            <div>Дааааа назавжди ✨</div>
+                        </div>
+                    </div>
+
+                    <div style="padding: 10px 15px; background: rgba(0,0,0,0.4); display: flex; gap: 10px; align-items: center;">
+                        <input type="text" placeholder="Повідомлення..." style="flex: 1; padding: 10px 14px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; color: #fff; outline: none; font-size: 0.88rem;">
+                        <button style="background: #e6683c; color: #fff; border: none; width: 36px; height: 36px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;">➤</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ИНСТАГРАМ ИСТОРИИ (МОДАЛКА) [source: 6] -->
+            <div id="ig-stories-viewer">
+                <div class="stories-progress-bar-container" id="stories-progress-bars">
+                    <div class="story-progress-segment"><div class="story-progress-fill" id="prog-0"></div></div>
+                    <div class="story-progress-segment"><div class="story-progress-fill" id="prog-1"></div></div>
+                    <div class="story-progress-segment"><div class="story-progress-fill" id="prog-2"></div></div>
+                    <div class="story-progress-segment"><div class="story-progress-fill" id="prog-3"></div></div>
+                </div>
+
+                <div class="story-header-info">
+                    <div class="story-user-meta">
+                        <div class="story-user-ava"><img src="https://cdn.discordapp.com/attachments/1322742010989383720/1533899270133125280/IMG_9196.png?ex=6a722a84&is=6a70d904&hm=25fe39b60358d318622df4aa345dc5b751a156c382f7db7f0f63b2241736aac4&" alt="Kamila"></div>
+                        <span class="story-username">qeeinsx1</span>
+                        <span class="story-time-ago">3г</span>
+                    </div>
+                    <button class="story-close-btn" onclick="closeStoriesViewer()">✕</button>
+                </div>
+
+                <div class="story-video-container">
+                    <div class="story-tap-left" onclick="prevStory()"></div>
+                    <div class="story-tap-right" onclick="nextStory()"></div>
+                    <video id="story-video-element" playsinline webkit-playsinline></video>
+                </div>
+
+                <div class="story-footer-comments">
+                    <div class="story-comment-input-mock">
+                        <span id="story-comment-text">h.h.h.h.h.h.hs: Ти така красоточка ❤️🔥</span>
+                        <span style="font-size: 11px; opacity: 0.7;">✨</span>
+                    </div>
+                    <button class="story-like-btn" onclick="likeStory()">❤️</button>
+                </div>
+            </div>
+
+            <div class="home-bar" onclick="goHome()"><div class="home-indicator"></div></div>
+        </div>
+
+        <!-- 🖼️ ДОДАТОК ГАЛЕРЕЯ (20 ФОТО ТА НАЙТЕПЛІШІ СЛОВА) -->
+        <div id="screen-gallery" class="phone-screen">
+            <div class="ios-gallery-app">
+                <div class="ios-gallery-header">
+                    <button class="ios-notes-back" onclick="goHome()">〈 Додому</button>
+                    <span style="font-size: 0.85rem; color: #ff6b81; font-weight: 600;">20 фото ❤️</span>
+                </div>
+                <div class="ios-gallery-title">Галерея ✨</div>
+                
+                <div class="gallery-grid" id="gallery-grid-container"></div>
+
+                <!-- Повноекранний перегляд фото в стилі iOS -->
+                <div id="gallery-viewer">
+                    <div class="viewer-top">
+                        <span style="font-size: 0.8rem; color: #ff6b81; font-weight: 600;" id="viewer-counter">1 з 20</span>
+                        <button class="viewer-close" onclick="closeGalleryViewer()">✕</button>
+                    </div>
+                    <div class="viewer-img-container">
+                        <img id="viewer-img" src="" alt="Photo">
+                    </div>
+                    <div class="viewer-caption-box">
+                        <h4 id="viewer-title">Моя кохана</h4>
+                        <p id="viewer-text">Теплі слова тут...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="home-bar" onclick="goHome()"><div class="home-indicator"></div></div>
+        </div>
+
+        <!-- 📝 ДОДАТОК НОТАТКИ -->
+        <div id="screen-notes" class="phone-screen">
+            <div class="ios-notes-app">
+                <div class="ios-notes-nav">
+                    <button class="ios-notes-back" onclick="goHome()">〈 Папки</button>
+                    <span style="font-size: 0.85rem; color: #ffcc00; font-weight: 600;">⋯</span>
+                </div>
+                <div class="ios-notes-title-main">Замітки ❤️</div>
+                <div class="ios-notes-search-box">
+                    <input type="text" class="ios-notes-search-input" placeholder="🔍 Пошук">
+                </div>
+                
+                <div class="ios-notes-scroll-area" id="ios-notes-list-container"></div>
+
+                <div id="ios-single-note-view">
+                    <div class="single-note-header">
+                        <button class="ios-notes-back" onclick="closeNoteDetail()">〈 Замітки</button>
+                        <span id="single-note-date-top" style="font-size: 0.75rem; color: #8e8e93;">Сьогодні</span>
+                        <button class="ios-notes-back" style="color: #ffcc00;" onclick="closeNoteDetail()">Готово</button>
+                    </div>
+                    <div class="single-note-content" id="single-note-text-editable" contenteditable="true"></div>
+                </div>
             </div>
         </div>
 
-        <!-- Фінал -->
-        <div class="section" style="text-align: center;">
-            <h2>🚀 Висновок</h2>
-            <p style="text-align: center;">Ми разом з <b>11 травня 2024 року</b>, і це найкращий час у моєму житті.</p>
-            <p style="text-align: center; font-weight: 600; color: #ff6b81;">Люблю тебе нереально, моя дурочка! ❤️</p>
-        </div>
-
-        <!-- Пасхалка про Нон-стоп -->
-        <div class="easter-egg" onclick="showSecret()">
-            🔍 [ Секретна кнопка для найуважніших ]
-            <div id="secret-text">Сподіваюся, після цього сайту ти зобов'язана купити мені Нон-стоп 😎</div>
+        <!-- ТАЙМЕР -->
+        <div id="screen-timer" class="phone-screen">
+            <div class="app-header">
+                <button class="back-btn" onclick="goHome()">← Назад</button>
+                <span class="app-title">❤️ Час разом</span>
+            </div>
+            <div class="timer-screen-box">
+                <div class="heart-pulse">💖</div>
+                <h3 style="color: #ff6b81; font-size: 1.1rem; margin-bottom: 10px;">Ми разом з 11 травня 2024 року:</h3>
+                <div id="days-count" style="font-size: 2rem; font-weight: 800; color: #fff; margin-bottom: 15px;">рахуємо...</div>
+                <p style="font-size: 0.9rem; color: #a5b1c2; line-height: 1.5;">І кожна секунда з тобою — це найкращий подарунок у моєму житті, моя неймовірна дурочка! 🥰✨</p>
+            </div>
+            <div class="home-bar" onclick="goHome()"><div class="home-indicator"></div></div>
         </div>
 
     </div>
 
     <script>
-        // Рахуємо дні з 11 травня 2024 року
-        function updateCounter() {
+        function createFloatingElements() {
+            const container = document.getElementById('floating-elements');
+            const items = [
+                { type: 'emoji', val: '❤️' },
+                { type: 'emoji', val: '💖' },
+                { type: 'emoji', val: '🐱' },
+                { type: 'emoji', val: '✨' },
+                { type: 'emoji', val: '🐾' },
+                { type: 'emoji', val: '💕' },
+                { type: 'emoji', val: '😻' },
+                { type: 'emoji', val: '💘' },
+                { type: 'text', val: 'Люблю тебе ❤️' },
+                { type: 'text', val: 'Моя дівчинка ✨' },
+                { type: 'text', val: 'Назавжди разом 💍' },
+                { type: 'text', val: 'Мій тюбік 🧸' }
+            ];
+            
+            setInterval(() => {
+                const el = document.createElement('div');
+                el.classList.add('float-item');
+                
+                const chosen = items[Math.floor(Math.random() * items.length)];
+                if (chosen.type === 'text') {
+                    el.innerHTML = `<span class="float-text">${chosen.val}</span>`;
+                } else {
+                    el.innerText = chosen.val;
+                    el.style.fontSize = (20 + Math.random() * 18) + 'px';
+                }
+
+                el.style.left = Math.random() * 95 + 'vw';
+                el.style.animationDuration = (5 + Math.random() * 4) + 's';
+                container.appendChild(el);
+
+                setTimeout(() => { el.remove(); }, 9000);
+            }, 300);
+        }
+        createFloatingElements();
+
+        const playlist = [
+            {
+                name: "Infinity Frequencies",
+                url: "https://cdn.discordapp.com/attachments/1114329998447345724/1533973897848950824/Infinity_Frequencies_-_Memory_limitations_in_artificial_intelligence_muzce.com.mp3?ex=6a727005&is=6a711e85&hm=e10f013764bf79e9e5ac817e60ebd47be2502b2a8bd22582f2b5deb17cf30197&"
+            },
+            {
+                name: "Lizer",
+                url: "https://cdn.discordapp.com/attachments/1114329998447345724/1533974216788021448/Lizer_-_.mp3?ex=6a727051&is=6a711ed1&hm=ca5e3494cc79459057337a19f9d59daf402c880b72fd86183c7d51d4b14eb889&"
+            },
+            {
+                name: "Special Track ❤️",
+                url: "https://cdn.discordapp.com/attachments/1114329998447345724/1533985694291333210/-_HD1080_1.mp3?ex=6a727b01&is=6a712981&hm=2d847f22bd288c44c866ad4386b661c219a92c8bc7756f2c3b0ea5fef631b195&"
+            }
+        ];
+        let currentTrackIndex = 0;
+
+        function updateTime() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            document.getElementById('current-time').innerText = `${hours}:${minutes}`;
+            document.getElementById('clock-big').innerText = `${hours}:${minutes}`;
+
+            const options = { weekday: 'long', month: 'long', day: 'numeric' };
+            document.getElementById('date-big').innerText = now.toLocaleDateString('uk-UA', options);
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+
+        function checkAuth() {
+            let login = document.getElementById('login-input').value.trim().toLowerCase();
+            let pass = document.getElementById('pass-input').value.trim();
+            let errorMsg = document.getElementById('error-msg');
+
+            const validNames = ['kamila', 'каміла'];
+            const validPasses = ['1105', '11.05', '11052024', '11.05.2024'];
+
+            if (validNames.includes(login) && validPasses.includes(pass)) {
+                document.getElementById('auth-screen').style.display = 'none';
+                document.getElementById('modal-screen').style.display = 'flex';
+            } else {
+                errorMsg.innerText = "❌ Помилка! Згадуй нашу дату або ім'я, дурочка! 😅";
+            }
+        }
+
+        let noClicks = 0;
+        function moveNoBtn() {
+            const btnNo = document.getElementById('btn-no');
+            const x = (Math.random() - 0.5) * 150;
+            const y = (Math.random() - 0.5) * 80;
+            btnNo.style.transform = `translate(${x}px, ${y}px) scale(${Math.max(0.4, 1 - noClicks * 0.15)})`;
+        }
+
+        function clickNoBtn() {
+            noClicks++;
+            const title = document.getElementById('modal-title');
+            const text = document.getElementById('modal-text');
+            const btnNo = document.getElementById('btn-no');
+
+            if (noClicks === 1) {
+                title.innerText = "Точно ні? 🥺";
+                text.innerText = "Ти впевнена, що хочеш закрити цей телефон?";
+                btnNo.style.fontSize = "0.8rem";
+                btnNo.style.padding = "6px 12px";
+            } else if (noClicks === 2) {
+                title.innerText = "Ну ти і вредна! 😾";
+                text.innerText = "Кнопка «Ні» зникає, тицяй «Так»!";
+                btnNo.style.display = "none";
+            }
+        }
+
+        function acceptModal() {
+            document.getElementById('modal-screen').style.display = 'none';
+            document.getElementById('phone-container').style.display = 'flex';
+            
+            const bgMusic = document.getElementById('bg-music');
+            const musicBtn = document.getElementById('music-btn');
+            const musicDisc = document.getElementById('music-disc');
+            
+            loadTrack(currentTrackIndex);
+            bgMusic.volume = 0;
+            
+            bgMusic.play().then(() => {
+                musicBtn.innerText = "⏸";
+                musicDisc.classList.remove('paused');
+                
+                let vol = 0;
+                let fadeInterval = setInterval(() => {
+                    if (vol < 0.4) {
+                        vol += 0.05;
+                        bgMusic.volume = Math.min(vol, 0.4);
+                    } else {
+                        clearInterval(fadeInterval);
+                    }
+                }, 300);
+            }).catch(err => console.log("Автозапуск аудіо заблоковано:", err));
+
+            bgMusic.onended = () => {
+                nextTrack();
+                bgMusic.play();
+            };
+
+            startCounter();
+            switchProfile('her'); 
+            generateMemesFeed();  
+            initNotesApp();
+            initGalleryApp();
+            startNotificationSequence();
+        }
+
+        function loadTrack(index) {
+            const bgMusic = document.getElementById('bg-music');
+            bgMusic.src = playlist[index].url;
+            document.getElementById('track-title').innerText = playlist[index].name;
+        }
+
+        function toggleMusic() {
+            const bgMusic = document.getElementById('bg-music');
+            const musicBtn = document.getElementById('music-btn');
+            const musicDisc = document.getElementById('music-disc');
+            
+            if (bgMusic.paused) {
+                bgMusic.play();
+                musicBtn.innerText = "⏸";
+                musicDisc.classList.remove('paused');
+            } else {
+                bgMusic.pause();
+                musicBtn.innerText = "▶";
+                musicDisc.classList.add('paused');
+            }
+        }
+
+        function nextTrack() {
+            currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
+            loadTrack(currentTrackIndex);
+            const bgMusic = document.getElementById('bg-music');
+            const musicBtn = document.getElementById('music-btn');
+            const musicDisc = document.getElementById('music-disc');
+            
+            bgMusic.play();
+            musicBtn.innerText = "⏸";
+            musicDisc.classList.remove('paused');
+        }
+
+        function startNotificationSequence() {
+            setTimeout(() => {
+                showNotification("h.h.h.h.h.h.hs ❤️", "Я тебе люблю ❤️✨", true, false);
+            }, 5000);
+        }
+
+        function showNotification(title, body, allowReply, isPhotoTrigger) {
+            const banner = document.getElementById('phone-notification-banner');
+            document.getElementById('notif-title-text').innerText = title;
+            document.getElementById('notif-body-text').innerText = body;
+            
+            const replyContainer = document.getElementById('notif-reply-container');
+            const statusSent = document.getElementById('notif-status-sent');
+            statusSent.style.display = 'none';
+
+            if (allowReply) {
+                replyContainer.style.display = 'block';
+                banner.dataset.actionType = "reply";
+            } else if (isPhotoTrigger) {
+                replyContainer.style.display = 'none';
+                banner.dataset.actionType = "openPhoto";
+            } else {
+                replyContainer.style.display = 'none';
+                banner.dataset.actionType = "none";
+            }
+
+            banner.classList.add('show-notif');
+        }
+
+        function handleNotificationClick(event) {
+            if (event.target.closest('.notif-reply-box')) return;
+            const banner = document.getElementById('phone-notification-banner');
+            
+            if (banner.dataset.actionType === "openPhoto") {
+                banner.classList.remove('show-notif');
+                document.getElementById('custom-photo-modal').style.display = 'flex';
+            } else {
+                banner.classList.remove('show-notif');
+            }
+        }
+
+        function closeCustomPhotoModal() {
+            document.getElementById('custom-photo-modal').style.display = 'none';
+        }
+
+        function sendQuickReply(event) {
+            event.stopPropagation();
+            const replyContainer = document.getElementById('notif-reply-container');
+            const statusSent = document.getElementById('notif-status-sent');
+
+            replyContainer.style.display = 'none';
+            statusSent.style.display = 'block';
+
+            const chatList = document.getElementById('direct-chat-messages');
+            chatList.innerHTML += `
+                <div class="chat-bubble receiver">
+                    <div class="bubble-avatar"><img src="https://cdn.discordapp.com/attachments/1114329998447345724/1533901068809928884/4e346ffcf7c2c087926f1fbd7dac207c.jpg?ex=6a722c31&is=6a70dab1&hm=7069600dd20dac1ce8940334b37adf8dbaa3ede691d18ead6d043d2bcc74629c&" alt="Kamila"></div>
+                    <div>Огоооо ❤️</div>
+                </div>
+            `;
+
+            setTimeout(() => {
+                document.getElementById('phone-notification-banner').classList.remove('show-notif');
+            }, 2000);
+
+            setTimeout(() => {
+                showNotification("h.h.h.h.h.h.hs ❤️", "Моя ты заечка 🧸💕", false, false);
+                setTimeout(() => {
+                    document.getElementById('phone-notification-banner').classList.remove('show-notif');
+                }, 4000);
+            }, 10000);
+
+            setTimeout(() => { triggerIphoneFlashlight(); }, 30000);
+
+            setTimeout(() => {
+                showNotification("h.h.h.h.h.h.hs ❤️", "я тебя сфоткал", false, true);
+            }, 32000);
+        }
+
+        function triggerIphoneFlashlight() {
+            const flash = document.getElementById('iphone-flashlight');
+            flash.classList.add('flash-active');
+            setTimeout(() => { flash.classList.remove('flash-active'); }, 250);
+            setTimeout(() => {
+                flash.classList.add('flash-active');
+                setTimeout(() => { flash.classList.remove('flash-active'); }, 250);
+            }, 400);
+        }
+
+        // --- ЛОГІКА ІНСТАГРАМ ІСТОРІЙ ---
+        const storyVideoUrls = [
+            "https://cdn.discordapp.com/attachments/1114329998447345724/1533990770313269419/2c176f87ce6e4f80ae8e863400b52d29.mov?ex=6a727fbb&is=6a712e3b&hm=106ca2954861ef0468c28571a72d81eea9e54784e4ba59ee1a3b2b2982e7710b&",
+            "https://cdn.discordapp.com/attachments/1114329998447345724/1533990770674110495/5f804d0c2d3749b19eb98ae3a5bc4334.mov?ex=6a727fbb&is=6a712e3b&hm=5fcbddb0e4045120102f500bf6f10481544c53e24d2b9ec3fa997a9084defe53&",
+            "https://cdn.discordapp.com/attachments/1114329998447345724/1533990770993004676/0f441e4488ac4b0db8dfbd45a0322fcb.mov?ex=6a727fbb&is=6a712e3b&hm=3b16970087211bd7a322cd52b9a9aa633f2f06c1b39c869e83d0c36221e59738&",
+            "https://cdn.discordapp.com/attachments/1114329998447345724/1533990771466702920/c4fffcb300c543ebbbb36a0c998dac62.mov?ex=6a727fbc&is=6a712e3c&hm=0855e81091b6ddc653c1db6d4dd0ceef14ec774c13d2ccc3fff6ae753882bdaf&"
+        ];
+        
+        const storyComments = [
+            "h.h.h.h.h.h.hs: Ти така красоточка ❤️🔥",
+            "h.h.h.h.h.h.hs: Моя нереальна киця 😍",
+            "h.h.h.h.h.h.hs: Найкраща і найкоханіша ✨",
+            "h.h.h.h.h.h.hs: Офігенна моя дівчинка 💍"
+        ];
+
+        let currentStoryIndex = 0;
+        let storyTimer = null;
+
+        function openStoriesViewer() {
+            currentStoryIndex = 0;
+            document.getElementById('ig-stories-viewer').style.display = 'flex';
+            playCurrentStory();
+        }
+
+        function closeStoriesViewer() {
+            const video = document.getElementById('story-video-element');
+            video.pause();
+            clearTimeout(storyTimer);
+            document.getElementById('ig-stories-viewer').style.display = 'none';
+            document.getElementById('profile-avatar-ring').classList.add('viewed');
+            document.getElementById('profile-story-label').style.display = 'none';
+        }
+
+        function playCurrentStory() {
+            clearTimeout(storyTimer);
+            const video = document.getElementById('story-video-element');
+            video.src = storyVideoUrls[currentStoryIndex];
+            video.currentTime = 0;
+            
+            document.getElementById('story-comment-text').innerText = storyComments[currentStoryIndex];
+
+            // Оновлюємо індикатори прогресу
+            for (let i = 0; i < storyVideoUrls.length; i++) {
+                const fill = document.getElementById(`prog-${i}`);
+                fill.style.transition = 'none';
+                if (i < currentStoryIndex) {
+                    fill.style.width = '100%';
+                } else if (i === currentStoryIndex) {
+                    fill.style.width = '0%';
+                } else {
+                    fill.style.width = '0%';
+                }
+            }
+
+            video.play().then(() => {
+                const duration = (video.duration && !isNaN(video.duration)) ? video.duration * 1000 : 6000;
+                const fill = document.getElementById(`prog-${currentStoryIndex}`);
+                setTimeout(() => {
+                    fill.style.transition = `width ${duration}ms linear`;
+                    fill.style.width = '100%';
+                }, 50);
+
+                storyTimer = setTimeout(() => {
+                    nextStory();
+                }, duration);
+            }).catch(e => {
+                console.log("Автозапуск відео історії:", e);
+                storyTimer = setTimeout(() => { nextStory(); }, 6000);
+            });
+        }
+
+        function nextStory() {
+            if (currentStoryIndex < storyVideoUrls.length - 1) {
+                currentStoryIndex++;
+                playCurrentStory();
+            } else {
+                closeStoriesViewer();
+            }
+        }
+
+        function prevStory() {
+            if (currentStoryIndex > 0) {
+                currentStoryIndex--;
+                playCurrentStory();
+            } else {
+                playCurrentStory();
+            }
+        }
+
+        function likeStory() {
+            alert("Ти поставив лайк на історію Каміли ❤️");
+        }
+
+        // --- 🖼️ БАЗА ДАНИХ ГАЛЕРЕЇ (РОВНО 20 ФОТО ТА НАЙТЕПЛІШІ СЛОВА ДЛЯ НЕЇ) ---
+        const galleryData = [
+            { url: "https://cdn.discordapp.com/attachments/1322742010989383720/1533899270133125280/IMG_9196.png?ex=6a722a84&is=6a70d904&hm=25fe39b60358d318622df4aa345dc5b751a156c382f7db7f0f63b2241736aac4&", title: "Моя неземна краса ❤️", text: "Ти виглядаєш просто нереально в кожну секунду, моя найкраща дівчинка у всесвіті!" },
+            { url: "https://cdn.discordapp.com/attachments/1322742010989383720/1533899212758974644/IMG_9704.jpg?ex=6a722a76&is=6a70d8f6&hm=24562111911cdea8571ecca39731a967e3eba573cf2e460caf25b89ffc8ee423&", title: "Наші незабутні моменти ✨", text: "Кожна хвилина поруч із тобою наповнена чистим щастям, посмішками і теплом." },
+            { url: "https://cdn.discordapp.com/attachments/1322742010989383720/1533899213501370528/IMG_9351.png?ex=6a722a76&is=6a70d8f6&hm=a0d0205e2e104b9c65a9196a2d520b9a29e37e1ce09fe2d78d5773a625079952&", title: "Моя королева 👑", text: "Ти моє натхнення, моя гордість і найдорожча людина, яку я безмежно кохаю." },
+            { url: "https://cdn.discordapp.com/attachments/1322742010989383720/1533899215284076676/IMG_9347.png?ex=6a722a77&is=6a70d8f7&hm=9c6f41a5cbb7a922af3fff33af7587db714db8676af47c42b60a6f4a120ff29e&", title: "Найщиріша посмішка 😊", text: "Твоя усмішка здатна осяяти навіть найпохмуріший день і зробити мій світ яскравим." },
+            { url: "https://cdn.discordapp.com/attachments/1322742010989383720/1533899215787261972/IMG_9346.png?ex=6a722a77&is=6a70d8f7&hm=7b7344d3013ed82d8b238ae17598c84ffca4026bf171c4aa6ec80a87772a1739&", title: "Два тюбіка назавжди 🔥", text: "Ми ідеальна команда суєти та любові, ніхто й ніколи нас не розлучить." },
+            { url: "https://cdn.discordapp.com/attachments/1322742010989383720/1533899216714203366/IMG_9250.jpg?ex=6a722a77&is=6a70d8f7&hm=70bf422c77901bdcba7586c60124ec42a73d0aa0df69acf7a6f3e4adc021afa5&", title: "Мій солодкий пірожочок 🧸", text: "Ти така затишна і рідна, що обіймати тебе — це найкраще місце на Землі." },
+            { url: "https://cdn.discordapp.com/attachments/1322742010989383720/1533899267490447562/IMG_9236.jpg?ex=6a722a83&is=6a70d903&hm=54358de96d64659ad33c5c034b4f6b5389c2450068e4da81cce4ee2b6e58cf9f&", title: "Наш спільний вайб 🌙", text: "З тобою затишно навіть у найпростіших місцях, головне просто триматися за руки." },
+            { url: "https://cdn.discordapp.com/attachments/1322742010989383720/1533899268241494278/IMG_9233.jpg?ex=6a722a84&is=6a70d904&hm=9ef7a297a69132c3d77b8f4f83776e3a4da0d9f4000b6c7cc4fafb0e49bd0f4c&", title: "Моя улюблена киця 🐾", text: "Ти моя сама найкраща, найласкавіша і найголовніша дівчинка на всій планеті." },
+            { url: "https://cdn.discordapp.com/attachments/1322742010989383720/1533899268601938061/IMG_9232.jpg?ex=6a722a84&is=6a70d904&hm=ad3dcb48f0e9d75449dae39cc51e94bb18b7dcfba7e7e72073cd5580978fe9ce&", title: "Коли шаленіємо разом 🤪", text: "З тобою ніколи не буває нудно, ти моя улюблена авантюристка і бунтарка!" },
+            { url: "https://cdn.discordapp.com/attachments/1322742010989383720/1533899269067641132/IMG_9231.jpg?ex=6a722a84&is=6a70d904&hm=5abfee3626259e738bb1bdceb48e7e582e532a5b5fa65991c5e3423168c1f797&", title: "Наші спогади 📸", text: "Кожен спільний знімок — це маленький шматочок нашої великої і щирої історії кохання." },
+            { url: "https://cdn.discordapp.com/attachments/1322742010989383720/1533899269378015454/IMG_9197.png?ex=6a722a84&is=6a70d904&hm=d612d3bd9e52647b1109cf14106849e6015ccd2eacbb872aebae842e528248a4&", title: "Твої чарівні очі 👀✨", text: "Я можу дивитися в твої очі вічно, адже в них цілий всесвіт і моє майбутнє." },
+            { url: "https://cdn.discordapp.com/attachments/1322742010989383720/1533899270812471429/IMG_9194.png?ex=6a722a84&is=6a70d904&hm=1a1d8ea71dd5ab19b202f1ef708671dff5780b7d1169d3f5b4a65e91b517c475&", title: "Прогулянки вдвох 🌧️", text: "Навіть під дощем з тобою тепло, затишно і спокійно йти поруч." },
+            { url: "https://cdn.discordapp.com/attachments/1322742010989383720/1533899310356496524/IMG_9192.png?ex=6a722a8e&is=6a70d90e&hm=4c1aaf0d9b8fcc074e6b366b6903ecc822783ab0509f3043f334e1333cceb9c9&", title: "Моє маленьке диво 💖", text: "Ти принесла в моє життя стільки яскравих фарб, турботи і справжньої любові." },
+            { url: "https://cdn.discordapp.com/attachments/1322742010989383720/1533899312000405714/IMG_9075.jpg?ex=6a722a8e&is=6a70d90e&hm=b1de7eb4b72145dcbe7c7cc2afb4bf77c64c6f874ac303ee57a0409e9b8f82e9&", title: "Наше щастя 🔥", text: "Я дякую долі за кожну мить, коли мы разом, і за ту саму школу." },
+            { url: "https://cdn.discordapp.com/attachments/1322742010989383720/1533899312457842801/IMG_9048.jpg?ex=6a722a8e&is=6a70d90e&hm=fd7c2d627b6b3c20578ec601aad48d84edb71fc331ff85c6d235bc3ce3105d15&", title: "Моя гордість 💍", text: "Ти надзвичайно розумна, неймовірна і найрідніша моя людина у всьому світі." },
+            { url: "https://cdn.discordapp.com/attachments/1114329998447345724/1533901068809928884/4e346ffcf7c2c087926f1fbd7dac207c.jpg?ex=6a722c31&is=6a70dab1&hm=7069600dd20dac1ce8940334b37adf8dbaa3ede691d18ead6d043d2bcc74629c&", title: "Завжди поруч 🤝", text: "Я завжди буду твоєю фортецею, опорою і захистом від будь-яких труднощів." },
+            { url: "https://cdn.discordapp.com/attachments/1322742010989383720/1533899313149907024/IMG_9031.png?ex=6a722a8e&is=6a70d90e&hm=d975e99bc407e438394b867b6f70849ea26414d29b207234283ce42955fdb33b&", title: "Мій дім — це ти 🏡", text: "Мені не важливо де ми знаходимося, головне щоб ти була зі мною поруч." },
+            { url: "https://cdn.discordapp.com/attachments/1322742010989383720/1533899314135433256/IMG_9029.png?ex=6a722a8e&is=6a70d90e&hm=ce2370bcbe901487f4c682daeb4e5b604df347be67ac77293cda2cc45c4305ee&", title: "Наш спільний шлях ✨", text: "Попереду у нас ціле життя, повне подорожей, сміху, планів і безмежної любові." },
+            { url: "https://cdn.discordapp.com/attachments/1322742010989383720/1533899319084585091/IMG_9004.jpg?ex=6a722a90&is=6a70d910&hm=55d7d53611320a1d186009a43d7002e6000f705d24b393d2aa0167135966cde9&", title: "Моє серце б'ється для тебе ❤️", text: "Ти моє єдине кохання, моя душа і моє найбільше досягнення в житті." },
+            { url: "https://cdn.discordapp.com/attachments/1322742010989383720/1533899319873372240/IMG_9001.jpg?ex=6a722a90&is=6a70d910&hm=586b98cc0bc0e67eadbbf18397d9b941596d4fcd653d990cd46f24ca94ff94e8&", title: "Назавжди разом ♾️", text: "Я кохав, кохаю і буду кохати тебе завжди-завжди, моя неповторна Каміла!" }
+        ];
+
+        function initGalleryApp() {
+            const container = document.getElementById('gallery-grid-container');
+            container.innerHTML = '';
+            galleryData.forEach((item, index) => {
+                container.innerHTML += `
+                    <div class="gallery-thumb" onclick="openGalleryViewer(${index})">
+                        <img src="${item.url}" alt="Photo ${index + 1}">
+                    </div>
+                `;
+            });
+        }
+
+        function openGalleryViewer(index) {
+            const item = galleryData[index];
+            document.getElementById('viewer-img').src = item.url;
+            document.getElementById('viewer-counter').innerText = `${index + 1} з ${galleryData.length}`;
+            document.getElementById('viewer-title').innerText = item.title;
+            document.getElementById('viewer-text').innerText = item.text;
+            document.getElementById('gallery-viewer').classList.add('viewer-active');
+        }
+
+        function closeGalleryViewer() {
+            document.getElementById('gallery-viewer').classList.remove('viewer-active');
+        }
+
+        // --- 📝 ДОДАТОК НОТАТКИ ---
+        const notesData = [
+            {
+                id: 1,
+                title: "Як сильно я тебе кохаю ❤️",
+                date: "Сьогодні, 02:28",
+                text: "Моя найрідніша, моя найулюбленіша дівчинка у світі! Я хочу щоб ти завжди знала, що ти — найкраще, що сталося в моєму житті. Кожна хвилина без тебе здається вічністю, а з тобою світ зупиняється. Ти мояааа назавжди! 🔥✨"
+            },
+            {
+                id: 2,
+                title: "Ти моє саме найрідніше сонеЦко",
+                date: "Вчора",
+                text: "Ти моє маленьке і найрідніше чудо, без якого я не зможу жити. Я не уявляю свого життя без тебе, бо ти все що в мене є! 😼❤️."
+            },
+            {
+                id: 3,
+                title: "Дякую тобі що ти в мене є!",
+                date: "12 травня",
+                text: "Зайчику, ти моє маленьке і найпрекрасніше чудо, я дякую цьому світу що він подарував мені таке прекрасне маленьке чудо. Я не знаю що робив би без тебе, дякую тобі що ти зі мною!) ✨."
+            },
+            {
+                id: 4,
+                title: "💎 Чому ти найкраща",
+                date: "1 червня",
+                text: "У найнереальніша посмішка у всесвіті, ти моя головна авантюристка, моє щастя і найулюбленіша киця назавжди 🧸❤️🔥."
+            }
+        ];
+
+        function initNotesApp() {
+            const container = document.getElementById('ios-notes-list-container');
+            container.innerHTML = '';
+            notesData.forEach(note => {
+                container.innerHTML += `
+                    <div class="ios-note-row" onclick="openNoteDetail(${note.id})">
+                        <h3>${note.title}</h3>
+                        <div class="note-date">${note.date}</div>
+                        <p>${note.text}</p>
+                    </div>
+                `;
+            });
+        }
+
+        function openNoteDetail(id) {
+            const note = notesData.find(n => n.id === id);
+            if (note) {
+                document.getElementById('single-note-text-editable').innerText = note.text;
+                document.getElementById('single-note-date-top').innerText = note.date;
+                const view = document.getElementById('ios-single-note-view');
+                view.style.display = 'flex';
+                setTimeout(() => { view.classList.add('note-open'); }, 10);
+            }
+        }
+
+        function closeNoteDetail() {
+            const view = document.getElementById('ios-single-note-view');
+            view.classList.remove('note-open');
+            setTimeout(() => { view.style.display = 'none'; }, 300);
+        }
+
+        function openApp(appName) {
+            const screens = document.querySelectorAll('.phone-screen');
+            screens.forEach(s => s.classList.remove('active-screen'));
+            document.getElementById('screen-' + appName).classList.add('active-screen');
+        }
+
+        function goHome() {
+            const screens = document.querySelectorAll('.phone-screen');
+            screens.forEach(s => s.classList.remove('active-screen'));
+            document.getElementById('screen-home').classList.add('active-screen');
+            closeNoteDetail();
+            closeGalleryViewer();
+            closeCustomPhotoModal();
+            closeStoriesViewer();
+        }
+
+        function switchIgTab(tabName) {
+            const tabFeedBtn = document.getElementById('tab-feed-btn');
+            const tabMemesBtn = document.getElementById('tab-memes-btn');
+            const tabDirectBtn = document.getElementById('tab-direct-btn');
+            const sectionFeed = document.getElementById('ig-section-feed');
+            const sectionMemes = document.getElementById('ig-section-memes');
+            const sectionDirect = document.getElementById('ig-section-direct');
+
+            tabFeedBtn.classList.remove('active-tab');
+            tabMemesBtn.classList.remove('active-tab');
+            tabDirectBtn.classList.remove('active-tab');
+            sectionFeed.classList.remove('active-ig');
+            sectionMemes.classList.remove('active-ig');
+            sectionDirect.classList.remove('active-ig');
+
+            if (tabName === 'feed') {
+                tabFeedBtn.classList.add('active-tab');
+                sectionFeed.classList.add('active-ig');
+            } else if (tabName === 'memes') {
+                tabMemesBtn.classList.add('active-tab');
+                sectionMemes.classList.add('active-ig');
+            } else {
+                tabDirectBtn.classList.add('active-tab');
+                sectionDirect.classList.add('active-ig');
+            }
+        }
+
+        function switchProfile(who) {
+            const btnHer = document.getElementById('btn-profile-her');
+            const btnHim = document.getElementById('btn-profile-him');
+            const title = document.getElementById('ig-nav-title');
+            const avatarBox = document.getElementById('profile-avatar-box');
+            const avatarWrapper = document.getElementById('profile-avatar-wrapper');
+            const bioBox = document.getElementById('profile-bio-box');
+            const statPosts = document.getElementById('stat-posts');
+            const statFollowers = document.getElementById('stat-followers');
+            const statFollowing = document.getElementById('stat-following');
+
+            if (who === 'her') {
+                btnHer.classList.add('active');
+                btnHim.classList.remove('active');
+                title.innerText = "qeeinsx1 👑";
+                avatarBox.innerHTML = '<img src="https://media.discordapp.net/attachments/1322742010989383720/1533899270133125280/IMG_9196.png?ex=6a722a84&is=6a70d904&hm=25fe39b60358d318622df4aa345dc5b751a156c382f7db7f0f63b2241736aac4&=&format=webp&quality=lossless&width=939&height=1024" alt="Avatar">';
+                statPosts.innerText = "3";
+                statFollowers.innerText = "11.05.24K";
+                statFollowing.innerText = "1";
+                bioBox.innerHTML = "<b>Каміла ✨</b> (@qeeinsx1)<br>улюблена дівчинка Дані (крутишка)❤️<br>📍 Semenivochka";
+                
+                // Вмикаємо клікабельність історій тільки для Каміли
+                avatarWrapper.style.cursor = "pointer";
+                avatarWrapper.setAttribute("onclick", "openStoriesViewer()");
+                document.getElementById('profile-avatar-ring').style.display = "flex";
+                document.getElementById('profile-story-label').style.display = "block";
+
+                loadInstagramFeed('her');
+            } else {
+                btnHim.classList.add('active');
+                btnHer.classList.remove('active');
+                title.innerText = "h.h.h.h.h.h.hs 🔥";
+                avatarBox.innerHTML = '<img src="https://cdn.discordapp.com/attachments/1114329998447345724/1533901068809928884/4e346ffcf7c2c087926f1fbd7dac207c.jpg?ex=6a722c31&is=6a70dab1&hm=7069600dd20dac1ce8940334b37adf8dbaa3ede691d18ead6d043d2bcc74629c&" alt="Avatar">';
+                statPosts.innerText = "2";
+                statFollowers.innerText = "11.05.24K";
+                statFollowing.innerText = "1";
+                bioBox.innerHTML = "<b>Даня ⚡</b> (@h.h.h.h.h.h.hs)<br>люблю свою Камілу ❤️<br>📍 Germanivka";
+                
+                // Повністю прибираємо історії з профілю Дані
+                avatarWrapper.style.cursor = "default";
+                avatarWrapper.removeAttribute("onclick");
+                document.getElementById('profile-avatar-ring').style.background = "#333";
+                document.getElementById('profile-story-label').style.display = "none";
+
+                loadInstagramFeed('him');
+            }
+        }
+
+        function loadInstagramFeed(profile) {
+            const container = document.getElementById('ig-feed-content');
+            container.innerHTML = '';
+
+            if (profile === 'her') {
+                const posts = [
+                    {url: "https://cdn.discordapp.com/attachments/1114329998447345724/1533990029867745361/B559A1C4-D9FD-428F-8D80-423052CF09AD.jpg?ex=6a727f0b&is=6a712d8b&hm=cfd78f4c19165fa68f35890ee2e1ee2f84d3ff2d021e40f1851a0b3fe267a722&", caption: "Моя неймовірна і найрідніша красуня! 😍🔥"},
+                    {url: "https://cdn.discordapp.com/attachments/1114329998447345724/1533990038105231542/F7EA2B0E-FBD7-4AB0-866E-C86F4884A96B.jpg?ex=6a727f0d&is=6a712d8d&hm=986e3065a3b0def9e774b6cfbbc1e2e64a25ac4197c8ee7f26a08118982c041b&", caption: "Найкраща, наймиліша і найкоханіша у світі дівчинка ✨❤️"},
+                    {url: "https://cdn.discordapp.com/attachments/1114329998447345724/1533990039892131840/39BE0C7C-6F8A-4041-AE9C-C68D90CEE581.jpg?ex=6a727f0d&is=6a712d8d&hm=9851928eb085566ca9d16ec2211ee3038cb88b0584d8001666d95d853a4e3982&", caption: "Дивлюся на тебе і закохуюся щодня все сильніше ❤️‍🔥"}
+                ];
+                posts.forEach(p => {
+                    container.innerHTML += `
+                        <div class="ig-post-card">
+                            <div class="ig-post-author">
+                                <div style="width: 28px; height: 28px; border-radius: 50%; overflow: hidden;"><img src="https://cdn.discordapp.com/attachments/1322742010989383720/1533899270133125280/IMG_9196.png?ex=6a722a84&is=6a70d904&hm=25fe39b60358d318622df4aa345dc5b751a156c382f7db7f0f63b2241736aac4&" style="width:100%; height:100%; object-fit:cover;" alt="avatar"></div>
+                                <span>qeeinsx1</span>
+                            </div>
+                            <div class="ig-post-img"><img src="${p.url}" alt="Post"></div>
+                            <div class="ig-post-actions">❤️ 💬 🚀</div>
+                            <div class="ig-comments">
+                                <div class="comment-item"><b>h.h.h.h.h.h.hs</b> ${p.caption}</div>
+                            </div>
+                        </div>
+                    `;
+                });
+            } else {
+                const posts = [
+                    {url: "https://cdn.discordapp.com/attachments/1322742010989383720/1533899312457842801/IMG_9048.jpg?ex=6a722a8e&is=6a70d90e&hm=fd7c2d627b6b3c20578ec601aad48d84edb71fc331ff85c6d235bc3ce3105d15&", caption: "Найкращий день у моєму житті разом з тобою ✨"},
+                    {url: "https://cdn.discordapp.com/attachments/1322742010989383720/1533899311278985286/IMG_9190.png?ex=6a722a8e&is=6a70d90e&hm=06cfccb27a7b07753fa9229e0e47b9235ea259f32b8d2d97eaa239eca3ed417f&", caption: "Просто найкращі і щасливіші вдвох 🖤"}
+                ];
+                posts.forEach(p => {
+                    container.innerHTML += `
+                        <div class="ig-post-card">
+                            <div class="ig-post-author">
+                                <div style="width: 28px; height: 28px; border-radius: 50%; overflow: hidden;"><img src="https://cdn.discordapp.com/attachments/1114329998447345724/1533901068809928884/4e346ffcf7c2c087926f1fbd7dac207c.jpg?ex=6a722c31&is=6a70dab1&hm=7069600dd20dac1ce8940334b37adf8dbaa3ede691d18ead6d043d2bcc74629c&" style="width:100%; height:100%; object-fit:cover;" alt="avatar"></div>
+                                <span>h.h.h.h.h.h.hs</span>
+                            </div>
+                            <div class="ig-post-img"><img src="${p.url}" alt="Post"></div>
+                            <div class="ig-post-actions">❤️ 💬 🚀</div>
+                            <div class="ig-comments">
+                                <div class="comment-item"><b>h.h.h.h.h.h.hs</b> ${p.caption}</div>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+        }
+
+        function generateMemesFeed() {
+            const memeImagesList = [
+                {url: "https://cdn.discordapp.com/attachments/1114329998447345724/1533999193872531557/1637830982_1-koshka-top-p-kotiki-spyat-v-obnimku-1.jpg?ex=6a728794&is=6a713614&hm=4045f49dfafad8c48fc59f49fde8b189ebc8d0bcb590d15af850a51111077e61&", text: "Коли заснули в міцних обнимках 🐾"},
+                {url: "https://cdn.discordapp.com/attachments/1114329998447345724/1533999304388382720/images_2.jpg?ex=6a7287ae&is=6a71362e&hm=e0e23d908e201525c72cc74f9b3a66c4e01220dd9a4429e784822c46ef9468e2&", text: "Дві макаки на ватє, які знайшли одне одного 🐒😂"},
+                {url: "https://cdn.discordapp.com/attachments/1114329998447345724/1533999426371195042/1637890057_1-koshka-top-p-dva-kotika-obnimayutsya-1.jpg?ex=6a7287cb&is=6a71364b&hm=efadafb6a8c78c27e5785cab42ca9d1d686f4db3c28bee1bd8c86caceb767ca5&", text: "Ти і я після неймовірного нонстопа ⚡"},
+                {url: "https://cdn.discordapp.com/attachments/1114329998447345724/1533999799529902141/images_3.jpg?ex=6a728824&is=6a7136a4&hm=bcce49c6fb993871c98214a812bc815072f099c5a7cb825716c371c5ad9ce229&", text: "Коли хтось наважився заважати нашому спільному вечору 😾"},
+                {url: "https://cdn.discordapp.com/attachments/1114329998447345724/1533999935324684441/images_4.jpg?ex=6a728844&is=6a7136c4&hm=51bb13fbd9267107799fe84a08b12a990b323190a2a15b54044168eaae9595a6&", text: "Ми приходимо в гості і наводимо суєту"},
+                {url: "https://cdn.discordapp.com/attachments/1114329998447345724/1534000054803628134/13049753.jpg?ex=6a728861&is=6a7136e1&hm=81a1a8544246167814442509463ae6f447324b1ff892fe1684b2ab48401b397f&", text: "Ти вибираєш фільм пів години, а потім засинаєш на моєму плечі"},
+                {url: "https://cdn.discordapp.com/attachments/1114329998447345724/1534000157711011860/images_5.jpg?ex=6a728879&is=6a7136f9&hm=5ac4b12646501507b57a66909c54b14aac6b57f7ecc2cffa723f0b53a7588321&", text: "Романтичні осінні вайби гуляти під дощем тримаючись за руки 🌧️"},
+                {url: "https://cdn.discordapp.com/attachments/1114329998447345724/1534000269166252063/images_6.jpg?ex=6a728894&is=6a713714&hm=33cdb774ffc5cc96af0f4968384ba1fdea968a9520f79db4c019cb466e311f87&", text: "Ти намагаєшся посадити мене на здорову їжу замість пельменів з сиром"},
+                {url: "https://cdn.discordapp.com/attachments/1114329998447345724/1534000350552522994/images_7.jpg?ex=6a7288a7&is=6a713727&hm=ad644d08cc8ef6d35f66de4cf9f012e96466d232064d743ae9f1f96ead0fec57&", text: "Чистий стан душі на ранок понеділка"},
+                {url: "https://cdn.discordapp.com/attachments/1114329998447345724/1534000442131087491/images_8.jpg?ex=6a7288bd&is=6a71373d&hm=633ae7cdeb1b77e918e6c03491570232765bae56ba808647bcf3ddc203460e72&", text: "Коли знову замовили піцу на ніч і щасливі 🍕"}
+            ];
+
+            const memeContainer = document.getElementById('meme-container-list');
+            memeContainer.innerHTML = '';
+            
+            memeImagesList.forEach((item) => {
+                memeContainer.innerHTML += `
+                    <div class="ig-post-card">
+                        <div class="ig-post-author">
+                            <div style="width: 28px; height: 28px; border-radius: 50%; overflow: hidden; background: #333;"><img src="https://cdn.discordapp.com/attachments/1114329998447345724/1533901068809928884/4e346ffcf7c2c087926f1fbd7dac207c.jpg?ex=6a722c31&is=6a70dab1&hm=7069600dd20dac1ce8940334b37adf8dbaa3ede691d18ead6d043d2bcc74629c&" style="width:100%; height:100%; object-fit:cover;" alt="avatar"></div>
+                            <span>meme_animals_top</span>
+                        </div>
+                        <div class="ig-post-img"><img src="${item.url}" alt="meme"></div>
+                        <div class="ig-post-actions">❤️ 💬 🚀</div>
+                        <div class="ig-comments">
+                            <div><b>meme_animals_top</b> ${item.text}</div>
+                            <div class="comment-item"><b>h.h.h.h.h.h.hs</b> Це точно ми @qeeinsx1 ❤️</div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        function startCounter() {
             const startDate = new Date('2024-05-11');
             const today = new Date();
             const diffTime = Math.abs(today - startDate);
             const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
             document.getElementById('days-count').innerText = diffDays + ' днів разом ❤️';
-        }
-        updateCounter();
-
-        // Кнопка Рево
-        let revoClicks = 0;
-        function revoClick() {
-            revoClicks++;
-            const msg = document.getElementById('revo-message');
-            if (revoClicks === 1) {
-                msg.innerText = "🥤 Блін, аж в самого в горлі пересохло. Біжимо за Рево!";
-            } else if (revoClicks === 2) {
-                msg.innerText = "рєальна хватить тицяти, іди цілуй Даню 😘";
-            } else {
-                msg.innerText = "Та все, харош, ти і так найкраща! ❤️";
-            }
-        }
-
-        // Відкриття конвертів
-        function toggleEnv(num) {
-            const content = document.getElementById('env-' + num);
-            if (content.style.display === 'block') {
-                content.style.display = 'none';
-            } else {
-                content.style.display = 'block';
-            }
-        }
-
-        // Пасхалка
-        function showSecret() {
-            const secret = document.getElementById('secret-text');
-            secret.style.display = secret.style.display === 'block' ? 'none' : 'block';
         }
     </script>
 </body>
